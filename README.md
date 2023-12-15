@@ -8,35 +8,55 @@ Tutorial yiimp 2022 working
 #### 1 - install in first vps(root) git, curl, make, and gcc
 
 ```sudo apt install git```
+
 ```sudo apt install curl```
+
 ```sudo apt install make```
+
 ```sudo apt update```
+
 ```sudo apt-get install locales```
+
 ```sudo dpkg-reconfigure locales ```     en_US utf8
+
 ```sudo apt install build-essential```
 
 in yiimpserver user
 
 ```sudo apt-get update```
+
 ```sudo apt-get install software-properties-common```
+
 ```sudo apt-get install postfix```
 
 ```sudo apt-get remove mariadb-client```
+
 ```sudo rm /etc/apt/sources.list.d/mariadb.list```
+
 ```sudo nano /etc/apt/sources.list.d/mariadb.list```
+
 ```deb [arch=amd64,arm64,ppc64el] http://mirror.one.com/mariadb/repo/10.4/debian buster main```
+
 ```sudo apt-get update```
+
 ```sudo apt-get install mariadb-client```
+
 ```sudo apt-get install -f```
+
 ```mariadb --version```
 
 #### 1.2 - Use no-ip for domain (optional)
 
 ```cd /usr/local/src/```
+
 ```sudo wget http://www.noip.com/client/linux/noip-duc-linux.tar.gz```
+
 ```sudo tar xf noip-duc-linux.tar.gz```
+
 ```cd noip-2.1.9-1/```
+
 ```sudo make install```
+
 
 1.2 - After the make install command, it will request your noip email and password, after that just choose your update options, and your noip is ready to go.
 
@@ -111,7 +131,9 @@ After running the command it will ask you to restart the machine, and give instr
 #### Let's install the right php
 
 ```sudo apt install php7.3-memcache```
+
 ```sudo apt install php7.3-memcached```
+
 ```sudo apt install memcached```
 
 #### Now let's make the system switch from php 8.* to 7.3
