@@ -1,65 +1,49 @@
-# Tutorial-yiimp-mining-pool-2022-2023-working
+# yiimp-mining-pool-2022-2023-working
 Tutorial yiimp 2022 working
-###### Discord: https://discord.gg/K5KVvgm7v7
-###### - If this tutorial helped you, make a contribution
-Bitcoin Address QR Code            |  Ethereum Address QR Code         |  Litecoin Address QR Code
-:-------------------------:|:-------------------------:|:-------------------------:
-![Bitcoin Address](https://i.imgur.com/4rnaYNY.png)  |  ![Ethereum Address](https://i.imgur.com/0tJ6Dzu.png) | ![Litecoin Address](https://i.imgur.com/6tvGj4r.png)
-
-**BTC**: 1Ljwbwd6Z2UDkscDroHdnave1hzmjApmCD  (BTC)
-
-**ETH**: 0x935437ad8a2289807319e2da6b68e4299676f9bf  (ERC20)
-
-**LTC**: LeVPHyxkvGQ4fFW9DFGPYS6deNWY1AcSBo  (LTC)
-
-###### - Tutorial to help install yiimp
-###### - Tutorial para ajudar na instalação do yiimp
-###### - Pools that used this tutorial: https://onfirepool.ddns.net/
-
-#### Follow the steps, and your yiimp will be operational
 
 
 ####   Requirements:
-####   UBUNTU 18.04 Desktop (I used the minimal install)
+####   Debian 10 Desktop (I used the minimal install)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#### 1 - install git, curl, make, and gcc
-```
-sudo apt install git
-sudo apt install curl
-sudo apt install make
-sudo apt update
-sudo apt-get install locales
-sudo dpkg-reconfigure locales      en_US utf8
-sudo apt install build-essential
+#### 1 - install in first vps(root) git, curl, make, and gcc
+
+```sudo apt install git```
+```sudo apt install curl```
+```sudo apt install make```
+```sudo apt update```
+```sudo apt-get install locales```
+```sudo dpkg-reconfigure locales ```     en_US utf8
+```sudo apt install build-essential```
 
 in yiimpserver user
-sudo apt-get update
-sudo apt-get install software-properties-common
-sudo apt-get install postfix
 
-sudo apt-get remove mariadb-client
-sudo rm /etc/apt/sources.list.d/mariadb.list
-sudo nano /etc/apt/sources.list.d/mariadb.list
-deb [arch=amd64,arm64,ppc64el] http://mirror.one.com/mariadb/repo/10.4/debian buster main
-sudo apt-get update
-sudo apt-get install mariadb-client
-sudo apt-get install -f
-mariadb --version
-```
+```sudo apt-get update```
+```sudo apt-get install software-properties-common```
+```sudo apt-get install postfix```
+
+```sudo apt-get remove mariadb-client```
+```sudo rm /etc/apt/sources.list.d/mariadb.list```
+```sudo nano /etc/apt/sources.list.d/mariadb.list```
+```deb [arch=amd64,arm64,ppc64el] http://mirror.one.com/mariadb/repo/10.4/debian buster main```
+```sudo apt-get update```
+```sudo apt-get install mariadb-client```
+```sudo apt-get install -f```
+```mariadb --version```
+
 #### 1.2 - Use no-ip for domain (optional)
-```
-cd /usr/local/src/
-sudo wget http://www.noip.com/client/linux/noip-duc-linux.tar.gz
-sudo tar xf noip-duc-linux.tar.gz
-cd noip-2.1.9-1/
-sudo make install
-```
+
+```cd /usr/local/src/```
+```sudo wget http://www.noip.com/client/linux/noip-duc-linux.tar.gz```
+```sudo tar xf noip-duc-linux.tar.gz```
+```cd noip-2.1.9-1/```
+```sudo make install```
+
 1.2 - After the make install command, it will request your noip email and password, after that just choose your update options, and your noip is ready to go.
 
 #### 2 - Download a reliable yiimp installer. I recommend using yiimp Dirty Harry (if you use another, replace the command below with the installer of your choice)
-```
-sudo curl https://raw.githubusercontent.com/DirtyHarryDev/Yiimp-Server-Installer/master/bootstrap.sh | bash
-```
+
+```sudo curl https://raw.githubusercontent.com/DirtyHarryDev/Yiimp-Server-Installer/master/bootstrap.sh | bash```
+
 After running the command it will ask you to restart the machine, and give instructions on how to proceed with the installation after the restart, in my case I am using Dirty Harry, so the command will be yiimpserver
 
 #### 3 - Setting up and installing yiimp
@@ -125,15 +109,15 @@ After running the command it will ask you to restart the machine, and give instr
 > This happens because of the PHP version that yiimp uses, ubuntu downloads the latest version not being compatible with the pool
 # Now let's fix it
 #### Let's install the right php
-```
-sudo apt install php7.3-memcache
-sudo apt install php7.3-memcached
-sudo apt install memcached
-```
+
+```sudo apt install php7.3-memcache```
+```sudo apt install php7.3-memcached```
+```sudo apt install memcached```
+
 #### Now let's make the system switch from php 8.* to 7.3
-```
-sudo update-alternatives --config php
-```
+
+```sudo update-alternatives --config php```
+
 > select the option corresponding to PHP7.3
 
 #### Now just restart nginx and php
